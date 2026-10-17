@@ -90,7 +90,8 @@
 }
 
 .hint-box {
-  width: 240px;
+  width: 180px;
+  align-self: center;
 }
 
 .choice-box-item {
