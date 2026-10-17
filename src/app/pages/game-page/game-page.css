@@ -16,7 +16,7 @@
   width: max-content;
   min-height: calc(100vh - 36px);
   margin: 0 auto;
-  padding: 24px 48px;
+  padding: 40px 48px;
   background: #fff;
   outline: 1px solid #ddd;
   border-radius: 14px;
@@ -57,6 +57,8 @@
 
 .control-buttons {
   margin-bottom: auto;
+  width: 180px;
+  align-self: center;
 }
 
 .board-section {
