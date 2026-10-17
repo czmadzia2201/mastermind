@@ -1,0 +1,164 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #f6f7f9;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.game-layout {
+  display: grid;
+  grid-template-columns: 278px minmax(0, 1fr);
+  gap: 20px;
+  max-width: 1150px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.side-panel,
+.game-panel {
+  background: #fff;
+  outline: 1px solid #ddd;
+  border-radius: 14px;
+  box-sizing: border-box;
+}
+
+.side-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 20px;
+}
+
+.game-panel {
+  display: grid;
+  place-items: center;
+  min-height: 0;
+  padding: 14px;
+  min-width: 0px;
+}
+
+.game-options-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  height: 95%;
+}
+
+.control-buttons,
+.solution {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: auto;
+}
+
+.solution {
+  margin-bottom: 20px;
+}
+
+.control-buttons {
+  margin-bottom: auto;
+}
+
+.boards-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  width: 100%;
+}
+
+.board-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.section-title {
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+.choice-box,
+.solution-box,
+.board-box,
+.hint-box {
+  display: grid;
+  border-radius: 10px;
+  background: #f2f2f2;
+  align-items: center;
+  gap: 0;
+  grid-template-columns: repeat(4, 1fr);
+  flex-shrink: 0;
+}
+
+.board-box {
+  width: 240px;
+}
+
+.hint-box {
+  width: 180px;
+}
+
+.choice-box-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 56px;
+  padding: 8px 4px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.choice-box-item-small {
+  display: flex;
+  justify-content: center;
+  padding: 18px 4px;
+  border-radius: 10px;
+}
+
+.choice-box-item.active {
+  background-color: #eef8ee;
+  border: 1px solid #2e7d32;
+}
+
+.ball {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--background);
+}
+
+.ball.selected {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+  transform: scale(1.12);
+}
+
+.ball-small {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--background);
+}
+
+button {
+  padding: 8px 12px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+button:hover {
+  background: #f0f0f0;
+}
+

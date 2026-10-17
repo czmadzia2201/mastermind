@@ -1,0 +1,97 @@
+<div class="game-layout">
+
+  <aside class="side-panel">
+
+    <h1>Mastermind</h1>
+
+    <div class="game-options-section">
+
+      <div class="section-title">Choose color</div>
+
+      <div class="choice-box">
+        @for (entry of colors | keyvalue; track entry.key) {
+          <div class="choice-box-item">
+            <div class="ball"
+              [style.background-color]="entry.value"
+              [class.selected]= "+entry.key === selectedNumber"
+              (click)="selectNumber(entry.key)">
+            </div>
+          </div>
+        }
+      </div>
+
+      <div class="control-buttons">
+        <button type="button" (click)="startNewGame()">
+          New game
+        </button>
+
+        <button type="button" (click)="switchTurn()">
+          Check
+        </button>
+
+        <button type="button">
+          <i class="bi bi-info-circle"></i>
+          About the Game
+        </button>
+      </div>
+
+
+      <div class="solution">
+
+        <div class="section-title">Solution</div>
+
+        <div class="solution-box">
+          @for (cell of solution; track $index) {
+          <div class="choice-box-item">
+            <div class="ball"
+                 [style.background-color]="'gray'">
+            </div>
+          </div>
+          }
+        </div>
+
+      </div>
+
+    </div>
+
+  </aside>
+
+  <main class="game-panel">
+
+    <div class="boards-container">
+      <div class="board-section">
+        <div class="section-title">Enter your guess</div>
+        <div class="board-box">
+          @for (turn of turns; track $index; let i = $index) {
+            @for (guess of turn.guess; track $index; let j = $index) {
+              <div class="choice-box-item" [class.active]="i+1 === currentTurn">
+                <div class="ball"
+                     [style.background-color]="getColorValue(guess)"
+                     (click)="setBallValue(i, j)">
+                </div>
+              </div>
+            }
+          }
+        </div>
+      </div>
+
+      <div class="board-section">
+        <div class="section-title">Hints</div>
+        <div class="hint-box">
+          @for (turn of turns; track $index; let i = $index) {
+            @for (hint of turn.hint; track $index; let j = $index) {
+              <div class="choice-box-item-small">
+                <div class="ball-small"
+                     [style.background-color]="hint">
+                </div>
+              </div>
+            }
+          }
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
