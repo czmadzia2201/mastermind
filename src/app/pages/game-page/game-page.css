@@ -17,7 +17,7 @@
   width: max-content;
   min-height: calc(100vh - 36px);
   margin: 0 auto;
-  padding: 24px;
+  padding: 24px 48px;
   background: #fff;
   outline: 1px solid #ddd;
   border-radius: 14px;
@@ -30,9 +30,9 @@
 
 .game-columns {
   display: grid;
-  grid-template-columns: 240px 240px 180px;
+  grid-template-columns: 240px 240px 240px;
   align-items: stretch;
-  gap: 40px;
+  gap: 64px;
 }
 
 .side-panel {
@@ -90,7 +90,7 @@
 }
 
 .hint-box {
-  width: 180px;
+  width: 240px;
 }
 
 .choice-box-item {
