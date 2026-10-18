@@ -200,6 +200,9 @@ button:hover {
 }
 
 
+/* The shorter label is enabled at the smallest breakpoint. */
+.about-label-short { display: none; }
+
 /* Scale the entire three-column layout according to the limiting viewport dimension. */
 @media (max-width: 1020px) or (max-height: 600px) {
   :host { padding: 12px; }
@@ -261,5 +264,3 @@ button:hover {
   .about-label-full { display: none; }
   .about-label-short { display: inline; }
 }
-
-.about-label-short { display: none; }
