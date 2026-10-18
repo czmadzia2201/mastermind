@@ -205,16 +205,25 @@ button:hover {
 @media (max-width: 1020px) or (max-height: 750px) {
   :host { padding: 12px; }
   .game-layout {
-    min-height: auto;
+    min-height: calc(100vh - 24px);
     padding: 24px;
   }
   .game-columns {
     grid-template-columns: 190px 190px 170px;
     gap: 24px;
     margin-block: 0;
+    flex: 1;
   }
   .board-box { width: 190px; }
   .hint-box { width: 150px; }
+  .board-box,
+  .hint-box {
+    flex: 1;
+    grid-template-rows: repeat(8, minmax(40px, 1fr));
+    align-items: stretch;
+  }
+  .board-box .choice-box-item,
+  .hint-box .choice-box-item-small { height: auto; min-height: 40px; }
   .control-buttons { width: 160px; margin-top: 12px; margin-bottom: 0; }
   .control-buttons button { margin-top: 0; }
   .solution { margin-top: auto; }
@@ -232,7 +241,7 @@ button:hover {
 @media (max-width: 660px) or (max-height: 420px) {
   :host { padding: 8px; }
   .game-layout {
-    min-height: auto;
+    min-height: calc(100vh - 16px);
     padding: 12px;
     gap: 8px;
   }
@@ -243,6 +252,10 @@ button:hover {
   }
   .board-box { width: 150px; }
   .hint-box { width: 110px; }
+  .board-box,
+  .hint-box { grid-template-rows: repeat(8, minmax(29px, 1fr)); }
+  .board-box .choice-box-item,
+  .hint-box .choice-box-item-small { min-height: 29px; }
   .game-options-section,
   .board-section { gap: 6px; }
   .control-buttons,
@@ -267,6 +280,6 @@ button:hover {
 }
 
 .about-label-short { display: none; }
-@media (max-width: 660px) or (max-height: 480px) {
+@media (max-width: 660px) or (max-height: 420px) {
   .about-label-short { display: inline; }
 }
