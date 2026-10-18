@@ -202,7 +202,7 @@ button:hover {
 
 
 /* Scale the entire three-column layout according to the limiting viewport dimension. */
-@media (max-width: 1020px) or (max-height: 750px) {
+@media (max-width: 1020px) or (max-height: 600px) {
   :host { padding: 12px; }
   .game-layout {
     min-height: calc(100vh - 24px);
@@ -230,7 +230,7 @@ button:hover {
   .choice-box-item.active { border-radius: 8px; }
 }
 
-@media (max-width: 660px) or (max-height: 420px) {
+@media (max-width: 660px) or (max-height: 360px) {
   :host { padding: 8px; }
   .game-layout {
     min-height: calc(100vh - 16px);
