@@ -88,7 +88,7 @@
   background: #f2f2f2;
   align-items: center;
   gap: 0;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .board-box {
@@ -108,6 +108,7 @@
   padding: 8px 4px;
   border-radius: 10px;
   box-sizing: border-box;
+  min-width: 0;
 }
 
 .choice-box-item-small {
@@ -154,6 +155,13 @@ button:hover {
   background: #f0f0f0;
 }
 
+.control-buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
 /* Dialog */
 .game-dialog {
   width: min(90vw, 420px);
@@ -192,3 +200,130 @@ button:hover {
   background: #e2f2e2;
 }
 
+
+/* Responsive layout: preserve the three-column game on every screen size. */
+@media (max-width: 1020px) {
+  :host { padding: 12px; }
+  .game-layout {
+    min-height: calc(100vh - 24px);
+    padding: 28px 24px;
+  }
+  .game-columns {
+    grid-template-columns: 190px 190px 170px;
+    gap: 24px;
+  }
+  .board-box { width: 190px; }
+  .hint-box { width: 150px; }
+  .control-buttons { width: 160px; }
+  .choice-box-item { height: 44px; padding: 4px 3px; }
+  .choice-box-item-small { height: 44px; padding: 0 3px; align-items: center; box-sizing: border-box; }
+  .ball { width: 32px; height: 32px; }
+  .ball-small { width: 16px; height: 16px; }
+  .choice-box,
+  .solution-box,
+  .board-box,
+  .hint-box { border-radius: 8px; }
+  .choice-box-item.active { border-radius: 8px; }
+  .control-buttons { margin-top: 18px; margin-bottom: 0; }
+  .control-buttons button { margin-top: 0; }
+  .solution { margin-top: auto; }
+}
+
+@media (max-width: 680px) {
+  :host { padding: 8px; }
+  .game-layout {
+    min-height: calc(100vh - 16px);
+    padding: 20px 12px;
+    gap: 16px;
+  }
+  .game-columns {
+    grid-template-columns: 150px 150px 120px;
+    gap: 12px;
+  }
+  .board-box { width: 150px; }
+  .hint-box { width: 110px; }
+  .game-options-section,
+  .board-section { gap: 10px; }
+  .control-buttons,
+  .solution { gap: 8px; }
+  .control-buttons { width: 125px; margin-top: 12px; }
+  .solution { margin-top: auto; }
+  .choice-box-item,
+  .choice-box-item-small { height: 36px; padding: 0 2px; }
+  .choice-box-item-small { align-items: center; box-sizing: border-box; }
+  .ball { width: 24px; height: 24px; }
+  .ball-small { width: 12px; height: 12px; }
+  .choice-box,
+  .solution-box,
+  .board-box,
+  .hint-box { border-radius: 6px; }
+  .choice-box-item.active { border-radius: 6px; }
+  .board-section:last-child .section-title { margin-left: 5px; }
+  button { margin-top: 6px; padding: 7px 5px; }
+  .section-title { font-size: 11px; letter-spacing: 0.2px; }
+  .about-label-full { display: none; }
+  .about-label-short { display: inline; }
+}
+
+@media (max-width: 480px) {
+  :host { padding: 6px; }
+  .game-layout {
+    min-height: calc(100vh - 12px);
+    padding: 16px 9px;
+    gap: 12px;
+  }
+  .game-layout h1 { font-size: 22px; }
+  .game-columns {
+    grid-template-columns: 108px 108px 80px;
+    gap: 8px;
+  }
+  .board-box { width: 108px; }
+  .hint-box { width: 76px; }
+  .game-options-section,
+  .board-section { gap: 7px; }
+  .control-buttons,
+  .solution { gap: 6px; }
+  .control-buttons { margin-top: 10px; }
+  .solution { margin-top: auto; }
+  .control-buttons { margin-bottom: 0; }
+  .control-buttons { width: 104px; }
+  .choice-box-item,
+  .choice-box-item-small { height: 28px; padding: 0 1px; }
+  .ball { width: 20px; height: 20px; }
+  .ball-small { width: 10px; height: 10px; }
+  .choice-box,
+  .solution-box,
+  .board-box,
+  .hint-box { border-radius: 5px; }
+  .choice-box-item.active { border-radius: 5px; }
+  button { margin-top: 0; padding: 6px 2px; font-size: 12px; }
+  .section-title { font-size: 10px; letter-spacing: 0; }
+}
+
+@media (max-width: 350px) {
+  .game-layout { padding: 12px 6px; }
+  .game-columns {
+    grid-template-columns: 94px 94px 70px;
+    gap: 6px;
+  }
+  .board-box { width: 94px; }
+  .hint-box { width: 66px; }
+  .control-buttons { width: 90px; }
+  .control-buttons { margin-top: 6px; gap: 4px; }
+  .solution { margin-top: auto; gap: 4px; }
+  .choice-box-item,
+  .choice-box-item-small { height: 26px; }
+  .ball { width: 16px; height: 16px; }
+  .ball-small { width: 8px; height: 8px; }
+  .choice-box,
+  .solution-box,
+  .board-box,
+  .hint-box { border-radius: 4px; }
+  .choice-box-item.active { border-radius: 4px; }
+  .section-title { font-size: 9px; }
+}
+
+.about-label-short { display: none; }
+@media (max-width: 680px) {
+  .about-label-short { display: inline; }
+}
