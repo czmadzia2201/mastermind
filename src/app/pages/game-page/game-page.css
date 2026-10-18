@@ -219,6 +219,7 @@ button:hover {
   .choice-box-item-small { height: 44px; padding: 0 3px; align-items: center; box-sizing: border-box; }
   .ball { width: 36px; height: 36px; }
   .control-buttons { margin-top: 18px; margin-bottom: 0; }
+  .control-buttons button { margin-top: 0; }
   .solution { margin-top: 18px; }
 }
 
