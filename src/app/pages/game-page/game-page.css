@@ -238,6 +238,8 @@ button:hover {
   .board-section:last-child .section-title { margin-left: 5px; }
   button { margin-top: 6px; padding: 7px 5px; }
   .section-title { font-size: 11px; letter-spacing: 0.2px; }
+  .about-label-full { display: none; }
+  .about-label-short { display: inline; }
 }
 
 @media (max-width: 480px) {
@@ -249,24 +251,22 @@ button:hover {
   }
   .game-layout h1 { font-size: 22px; }
   .game-columns {
-    grid-template-columns: 100px 120px 92px;
+    grid-template-columns: 96px 116px 88px;
     gap: 8px;
   }
-  .board-box { width: 120px; }
-  .hint-box { width: 88px; }
+  .board-box { width: 116px; }
+  .hint-box { width: 84px; }
   .game-options-section,
   .board-section { gap: 7px; }
   .control-buttons,
   .solution { gap: 6px; }
-  .control-buttons { width: 98px; }
+  .control-buttons { width: 94px; }
   .choice-box-item,
   .choice-box-item-small { height: 40px; padding: 0 1px; }
   .ball { width: 25px; height: 25px; }
   .ball-small { width: 15px; height: 15px; }
   button { margin-top: 2px; padding: 6px 2px; font-size: 12px; }
   .section-title { font-size: 10px; letter-spacing: 0; }
-  .about-label-full { display: none; }
-  .about-label-short { display: inline; }
 }
 
 @media (max-width: 350px) {
@@ -286,6 +286,6 @@ button:hover {
 }
 
 .about-label-short { display: none; }
-@media (max-width: 480px) {
+@media (max-width: 680px) {
   .about-label-short { display: inline; }
 }
