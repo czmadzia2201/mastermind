@@ -87,7 +87,6 @@
   border-radius: 10px;
   background: #f2f2f2;
   align-items: center;
-  gap: 0;
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
@@ -217,7 +216,6 @@ button:hover {
   .hint-box { width: 150px; }
   .control-buttons { width: 160px; margin-top: 12px; margin-bottom: 0; }
   .control-buttons button { margin-top: 0; }
-  .solution { margin-top: auto; }
   .choice-box-item { height: 48px; padding: 4px 3px; }
   .choice-box-item-small { height: 48px; padding: 0 3px; align-items: center; box-sizing: border-box; }
   .ball { width: 32px; height: 32px; }
@@ -247,7 +245,6 @@ button:hover {
   .control-buttons,
   .solution { gap: 5px; }
   .control-buttons { width: 125px; margin-top: 6px; margin-bottom: 0; }
-  .solution { margin-top: auto; }
   .choice-box-item,
   .choice-box-item-small { height: 34px; padding: 0 2px; }
   .choice-box-item-small { align-items: center; box-sizing: border-box; }
@@ -266,6 +263,3 @@ button:hover {
 }
 
 .about-label-short { display: none; }
-@media (max-width: 660px) or (max-height: 420px) {
-  .about-label-short { display: inline; }
-}
