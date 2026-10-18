@@ -205,21 +205,22 @@ button:hover {
 @media (max-width: 1020px) or (max-height: 750px) {
   :host { padding: 12px; }
   .game-layout {
-    min-height: auto;
-    padding: 24px;
+    min-height: calc(100vh - 24px);
+    padding: 20px 24px;
+    gap: 12px;
   }
   .game-columns {
     grid-template-columns: 190px 190px 170px;
     gap: 24px;
-    margin-block: 0;
   }
   .board-box { width: 190px; }
   .hint-box { width: 150px; }
   .control-buttons { width: 160px; margin-top: 12px; margin-bottom: 0; }
   .control-buttons button { margin-top: 0; }
   .solution { margin-top: auto; }
-  .choice-box-item { height: 40px; padding: 4px 3px; }
-  .choice-box-item-small { height: 40px; padding: 0 3px; align-items: center; box-sizing: border-box; }
+  .choice-box-item { height: 48px; padding: 4px 3px; }
+  .choice-box-item-small { height: 48px; padding: 0 3px; align-items: center; box-sizing: border-box; }
+  .game-layout h1 { font-size: 26px; }
   .ball { width: 32px; height: 32px; }
   .ball-small { width: 16px; height: 16px; }
   .choice-box,
@@ -232,11 +233,11 @@ button:hover {
 @media (max-width: 660px) or (max-height: 420px) {
   :host { padding: 8px; }
   .game-layout {
-    min-height: auto;
+    min-height: calc(100vh - 16px);
     padding: 12px;
     gap: 8px;
   }
-  .game-layout h1 { font-size: 22px; }
+  .game-layout h1 { font-size: 20px; }
   .game-columns {
     grid-template-columns: 150px 150px 120px;
     gap: 12px;
@@ -250,7 +251,7 @@ button:hover {
   .control-buttons { width: 125px; margin-top: 6px; margin-bottom: 0; }
   .solution { margin-top: auto; }
   .choice-box-item,
-  .choice-box-item-small { height: 29px; padding: 0 2px; }
+  .choice-box-item-small { height: 34px; padding: 0 2px; }
   .choice-box-item-small { align-items: center; box-sizing: border-box; }
   .ball { width: 24px; height: 24px; }
   .ball-small { width: 12px; height: 12px; }
