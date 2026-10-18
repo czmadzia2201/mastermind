@@ -206,7 +206,7 @@ button:hover {
   :host { padding: 12px; }
   .game-layout {
     min-height: calc(100vh - 24px);
-    padding: 10px 24px 20px;
+    padding: 20px 24px;
     gap: 12px;
   }
   .game-columns {
@@ -233,7 +233,7 @@ button:hover {
   :host { padding: 8px; }
   .game-layout {
     min-height: calc(100vh - 16px);
-    padding: 6px 12px 12px;
+    padding: 12px;
     gap: 8px;
   }
   .game-columns {
