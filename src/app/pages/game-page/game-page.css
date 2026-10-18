@@ -192,3 +192,100 @@ button:hover {
   background: #e2f2e2;
 }
 
+
+/* Responsive layout: preserve the three-column game on every screen size. */
+@media (max-width: 1020px) {
+  :host { padding: 12px; }
+  .game-layout {
+    min-height: calc(100vh - 24px);
+    padding: 28px 24px;
+  }
+  .game-columns {
+    grid-template-columns: 190px 190px 170px;
+    gap: 24px;
+  }
+  .board-box { width: 190px; }
+  .hint-box { width: 150px; }
+  .control-buttons { width: 160px; }
+  .choice-box-item { height: 48px; padding: 6px 3px; }
+  .choice-box-item-small { height: 48px; padding: 0 3px; align-items: center; box-sizing: border-box; }
+  .ball { width: 36px; height: 36px; }
+}
+
+@media (max-width: 680px) {
+  :host { padding: 8px; }
+  .game-layout {
+    min-height: calc(100vh - 16px);
+    padding: 20px 12px;
+    gap: 16px;
+  }
+  .game-columns {
+    grid-template-columns: 130px 150px 120px;
+    gap: 12px;
+  }
+  .board-box { width: 150px; }
+  .hint-box { width: 110px; }
+  .game-options-section,
+  .board-section { gap: 10px; }
+  .control-buttons,
+  .solution { gap: 8px; }
+  .control-buttons { width: 125px; }
+  .choice-box-item,
+  .choice-box-item-small { height: 44px; padding: 0 2px; }
+  .choice-box-item-small { align-items: center; box-sizing: border-box; }
+  .ball { width: 30px; height: 30px; }
+  .ball-small { width: 17px; height: 17px; }
+  .board-section:last-child .section-title { margin-left: 5px; }
+  button { margin-top: 6px; padding: 7px 5px; }
+  .section-title { font-size: 11px; letter-spacing: 0.2px; }
+}
+
+@media (max-width: 480px) {
+  :host { padding: 6px; }
+  .game-layout {
+    min-height: calc(100vh - 12px);
+    padding: 16px 9px;
+    gap: 12px;
+  }
+  .game-layout h1 { font-size: 22px; }
+  .game-columns {
+    grid-template-columns: 100px 120px 92px;
+    gap: 8px;
+  }
+  .board-box { width: 120px; }
+  .hint-box { width: 88px; }
+  .game-options-section,
+  .board-section { gap: 7px; }
+  .control-buttons,
+  .solution { gap: 6px; }
+  .control-buttons { width: 98px; }
+  .choice-box-item,
+  .choice-box-item-small { height: 40px; padding: 0 1px; }
+  .ball { width: 25px; height: 25px; }
+  .ball-small { width: 15px; height: 15px; }
+  button { margin-top: 2px; padding: 6px 2px; font-size: 12px; }
+  .section-title { font-size: 10px; letter-spacing: 0; }
+  .about-label-full { display: none; }
+  .about-label-short { display: inline; }
+}
+
+@media (max-width: 350px) {
+  .game-layout { padding: 12px 6px; }
+  .game-columns {
+    grid-template-columns: 88px 112px 80px;
+    gap: 6px;
+  }
+  .board-box { width: 112px; }
+  .hint-box { width: 76px; }
+  .control-buttons { width: 86px; }
+  .choice-box-item,
+  .choice-box-item-small { height: 38px; }
+  .ball { width: 23px; height: 23px; }
+  .ball-small { width: 13px; height: 13px; }
+  .section-title { font-size: 9px; }
+}
+
+.about-label-short { display: none; }
+@media (max-width: 480px) {
+  .about-label-short { display: inline; }
+}
