@@ -215,9 +215,11 @@ button:hover {
   .board-box { width: 190px; }
   .hint-box { width: 150px; }
   .control-buttons { width: 160px; }
-  .choice-box-item { height: 48px; padding: 6px 3px; }
-  .choice-box-item-small { height: 48px; padding: 0 3px; align-items: center; box-sizing: border-box; }
+  .choice-box-item { height: 44px; padding: 4px 3px; }
+  .choice-box-item-small { height: 44px; padding: 0 3px; align-items: center; box-sizing: border-box; }
   .ball { width: 36px; height: 36px; }
+  .control-buttons { margin-top: 18px; margin-bottom: 0; }
+  .solution { margin-top: 18px; }
 }
 
 @media (max-width: 680px) {
@@ -237,9 +239,10 @@ button:hover {
   .board-section { gap: 10px; }
   .control-buttons,
   .solution { gap: 8px; }
-  .control-buttons { width: 125px; }
+  .control-buttons { width: 125px; margin-top: 12px; }
+  .solution { margin-top: 12px; }
   .choice-box-item,
-  .choice-box-item-small { height: 44px; padding: 0 2px; }
+  .choice-box-item-small { height: 36px; padding: 0 2px; }
   .choice-box-item-small { align-items: center; box-sizing: border-box; }
   .ball { width: 30px; height: 30px; }
   .ball-small { width: 17px; height: 17px; }
@@ -271,7 +274,7 @@ button:hover {
   .control-buttons { margin-bottom: 0; }
   .control-buttons { width: 104px; }
   .choice-box-item,
-  .choice-box-item-small { height: 34px; padding: 0 1px; }
+  .choice-box-item-small { height: 28px; padding: 0 1px; }
   .ball { width: 23px; height: 23px; }
   .ball-small { width: 15px; height: 15px; }
   button { margin-top: 0; padding: 6px 2px; font-size: 12px; }
@@ -290,7 +293,7 @@ button:hover {
   .control-buttons,
   .solution { margin-top: 6px; gap: 4px; }
   .choice-box-item,
-  .choice-box-item-small { height: 30px; }
+  .choice-box-item-small { height: 25px; }
   .ball { width: 20px; height: 20px; }
   .ball-small { width: 13px; height: 13px; }
   .section-title { font-size: 9px; }
