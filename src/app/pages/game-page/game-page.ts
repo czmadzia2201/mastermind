@@ -38,11 +38,31 @@ export class GamePage implements OnInit {
     this.startNewGame();
   }
 
-  generateEmptyTurns(): Turn[] {
-    return Array.from({ length: 8 }, () => ({
-      guess: [0, 0, 0, 0],
-      hint: ['gray', 'gray', 'gray', 'gray']
-    }));
+  checkGuessSequence(): void {
+    const sequenceToCheck = this.turns[this.currentTurn - 1].guess;
+    this.turns[this.currentTurn - 1].hint = this.compareSequences(sequenceToCheck, this.sequence);
+    this.checkGameStatus();
+    if (this.gameStatus !== 'in-progress') {
+      if (this.gameStatus === 'won') {
+        this.openGameWonDialog();
+      } else if (this.gameStatus === 'lost') {
+        this.openGameLostDialog();
+      }
+      this.showSolution();
+    } else {
+      this.switchTurn();
+    }
+  }
+
+  startNewGame(): void {
+    this.currentTurn = 1;
+    this.selectedNumber = 0;
+    this.turns = this.generateEmptyTurns();
+    this.dialogData = null;
+
+    this.hideSolution();
+    this.generateSequence();
+    this.gameStatus = 'in-progress';
   }
 
   getColorValue(numberColor: number): string {
@@ -65,22 +85,6 @@ export class GamePage implements OnInit {
       return;
     }
     this.turns[turnIndex].guess[guessIndex] = this.selectedNumber;
-  }
-
-  checkGuessSequence(): void {
-    const sequenceToCheck = this.turns[this.currentTurn - 1].guess;
-    this.turns[this.currentTurn - 1].hint = this.compareSequences(sequenceToCheck, this.sequence);
-    this.checkGameStatus();
-    if (this.gameStatus !== 'in-progress') {
-      if (this.gameStatus === 'won') {
-        this.openGameWonDialog();
-      } else if (this.gameStatus === 'lost') {
-        this.openGameLostDialog();
-      }
-      this.showSolution();
-    } else {
-      this.switchTurn();
-    }
   }
 
   private compareSequences(guess: number[], sequence: number[]): ('gray' | 'white' | 'black')[] {
@@ -118,32 +122,28 @@ export class GamePage implements OnInit {
     ];
   }
 
+  private generateEmptyTurns(): Turn[] {
+    return Array.from({ length: 8 }, () => ({
+      guess: [0, 0, 0, 0],
+      hint: ['gray', 'gray', 'gray', 'gray']
+    }));
+  }
+
   private switchTurn(): void {
     if (this.currentTurn < 8) {
       this.currentTurn++;
     }
   }
 
-  startNewGame(): void {
-    this.currentTurn = 1;
-    this.selectedNumber = 0;
-    this.turns = this.generateEmptyTurns();
-    this.dialogData = null;
-
-    this.hideSolution();
-    this.generateSequence();
-    this.gameStatus = 'in-progress';
-  }
-
-  hideSolution(): void {
+  private hideSolution(): void {
     this.solution = [0, 0, 0, 0];
   }
 
-  showSolution(): void {
+  private showSolution(): void {
     this.solution = this.sequence;
   }
 
-  checkGameStatus(): void {
+  private checkGameStatus(): void {
     const lastHint = this.turns[this.currentTurn - 1].hint;
     if (lastHint.every(hint => hint === 'black')) {
       this.gameStatus = 'won';
@@ -152,7 +152,7 @@ export class GamePage implements OnInit {
     }
   }
 
-  generateSequence(): void {
+  private generateSequence(): void {
     for(let i = 0; i < this.sequence.length; i++) {
         var randomNumber = Math.floor(Math.random() * 8);
         this.sequence[i] = randomNumber + 1;
@@ -165,11 +165,11 @@ export class GamePage implements OnInit {
     this.openDialog(ABOUT_DIALOG);
   }
 
-  openGameWonDialog(): void {
+  private openGameWonDialog(): void {
     this.openDialog(GAME_WON_DIALOG);
   }
 
-  openGameLostDialog(): void {
+  private openGameLostDialog(): void {
     this.openDialog(GAME_LOST_DIALOG);
   }
 
