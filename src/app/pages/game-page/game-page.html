@@ -20,15 +20,15 @@
         </div>
 
         <div class="control-buttons">
+          <button type="button" (click)="checkGuessSequence()">
+            Check
+          </button>
+
           <button type="button" (click)="startNewGame()">
             New game
           </button>
 
-          <button type="button" (click)="switchTurn()">
-            Check
-          </button>
-
-          <button type="button">
+          <button type="button" (click)="openAboutDialog()">
             <i class="bi bi-info-circle"></i>
             About the Game
           </button>
@@ -38,10 +38,10 @@
           <div class="section-title">Solution</div>
 
           <div class="solution-box">
-            @for (cell of solution; track $index) {
+            @for (solutionItem of solution; track $index) {
               <div class="choice-box-item">
                 <div class="ball"
-                     [style.background-color]="'gray'">
+                     [style.background-color]="getColorValue(solutionItem)">
                 </div>
               </div>
             }
@@ -83,3 +83,19 @@
   </div>
 
 </div>
+
+<dialog #dialog class="game-dialog">
+  <div class="dialog-content">
+    @if (dialogData) {
+    <h1>{{ dialogData.title }}</h1>
+
+    @for (paragraph of dialogData.paragraphs; track paragraph) {
+    <p>{{ paragraph }}</p>
+    }
+
+    <button type="button" (click)="closeDialog()">
+      OK
+    </button>
+    }
+  </div>
+</dialog>
