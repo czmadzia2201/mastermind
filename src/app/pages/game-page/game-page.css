@@ -16,7 +16,7 @@
   width: max-content;
   min-height: calc(100vh - 36px);
   margin: 0 auto;
-  padding: 40px 48px;
+  padding: 30px 48px;
   background: #fff;
   outline: 1px solid #ddd;
   border-radius: 14px;
@@ -206,7 +206,7 @@ button:hover {
   :host { padding: 12px; }
   .game-layout {
     min-height: calc(100vh - 24px);
-    padding: 20px 24px;
+    padding: 10px 24px 20px;
     gap: 12px;
   }
   .game-columns {
@@ -220,7 +220,6 @@ button:hover {
   .solution { margin-top: auto; }
   .choice-box-item { height: 48px; padding: 4px 3px; }
   .choice-box-item-small { height: 48px; padding: 0 3px; align-items: center; box-sizing: border-box; }
-  .game-layout h1 { font-size: 26px; }
   .ball { width: 32px; height: 32px; }
   .ball-small { width: 16px; height: 16px; }
   .choice-box,
@@ -234,10 +233,9 @@ button:hover {
   :host { padding: 8px; }
   .game-layout {
     min-height: calc(100vh - 16px);
-    padding: 12px;
+    padding: 6px 12px 12px;
     gap: 8px;
   }
-  .game-layout h1 { font-size: 20px; }
   .game-columns {
     grid-template-columns: 150px 150px 120px;
     gap: 12px;
