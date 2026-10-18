@@ -155,14 +155,6 @@ button:hover {
   background: #f0f0f0;
 }
 
-/* Keep palette and solution balls inside their four equal-width cells. */
-.choice-box .ball,
-.solution-box .ball {
-  max-width: 100%;
-  height: auto;
-  aspect-ratio: 1;
-}
-
 .control-buttons button {
   display: flex;
   align-items: center;
@@ -236,7 +228,7 @@ button:hover {
     gap: 16px;
   }
   .game-columns {
-    grid-template-columns: 130px 150px 120px;
+    grid-template-columns: 150px 150px 120px;
     gap: 12px;
   }
   .board-box { width: 150px; }
@@ -267,19 +259,19 @@ button:hover {
   }
   .game-layout h1 { font-size: 22px; }
   .game-columns {
-    grid-template-columns: 96px 116px 88px;
+    grid-template-columns: 108px 108px 80px;
     gap: 8px;
   }
-  .board-box { width: 116px; }
-  .hint-box { width: 84px; }
+  .board-box { width: 108px; }
+  .hint-box { width: 76px; }
   .game-options-section,
   .board-section { gap: 7px; }
   .control-buttons,
   .solution { gap: 6px; }
-  .control-buttons { width: 94px; }
+  .control-buttons { width: 104px; }
   .choice-box-item,
   .choice-box-item-small { height: 40px; padding: 0 1px; }
-  .ball { width: 25px; height: 25px; }
+  .ball { width: 23px; height: 23px; }
   .ball-small { width: 15px; height: 15px; }
   button { margin-top: 2px; padding: 6px 2px; font-size: 12px; }
   .section-title { font-size: 10px; letter-spacing: 0; }
@@ -288,15 +280,15 @@ button:hover {
 @media (max-width: 350px) {
   .game-layout { padding: 12px 6px; }
   .game-columns {
-    grid-template-columns: 88px 112px 80px;
+    grid-template-columns: 94px 94px 70px;
     gap: 6px;
   }
-  .board-box { width: 112px; }
-  .hint-box { width: 76px; }
-  .control-buttons { width: 86px; }
+  .board-box { width: 94px; }
+  .hint-box { width: 66px; }
+  .control-buttons { width: 90px; }
   .choice-box-item,
   .choice-box-item-small { height: 38px; }
-  .ball { width: 23px; height: 23px; }
+  .ball { width: 20px; height: 20px; }
   .ball-small { width: 13px; height: 13px; }
   .section-title { font-size: 9px; }
 }
