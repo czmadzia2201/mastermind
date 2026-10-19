@@ -21,7 +21,7 @@ export class GamePage implements OnInit {
 
   currentTurn = 1;
   selectedNumber = 0;
-  gameStatus: ('won' | 'lost' | 'in-progress') = 'in-progress';
+  private gameStatus: ('won' | 'lost' | 'in-progress') = 'in-progress';
 
   colors: Record<number, string> = {
     1: 'red',
@@ -73,8 +73,7 @@ export class GamePage implements OnInit {
   }
 
   selectNumber(num: string): void {
-    const numValue = Number(num);
-    this.selectedNumber = numValue;
+    this.selectedNumber = Number(num);
   }
 
   setBallValue(turnIndex: number, guessIndex: number): void {

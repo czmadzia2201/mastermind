@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <script type="text/javascript" src="jquery-3.5.0.min.js"></script>
+
+    <script language="JavaScript" type="text/javascript">
+        var numberToColor = ["red", "blue", "green", "darkviolet", "hotpink", "brown", "aqua", "yellow", "black"]; 
+        var tabHeight = 8;
+        var tabWidth = 4;
+
+        $(document).ready(function(){
+            $.fn.start = function() {
+                $.fn.resetVariables();
+                $.fn.clearTables();
+                $.fn.buildChoiceTable();
+                $.fn.buildSolutionTable();
+                $.fn.buildInputTable();
+                $.fn.buildResponseTable();
+                $.fn.generateRandomSequence();
+            }
+
+            $.fn.start();
+
+            $("#newGame").click(function(){
+                $.fn.start();
+            });
+
+            $("#check").click(function(){
+                $.fn.check();
+            });
+
+        });
+
+    </script>
+    <script language="JavaScript" type="text/javascript" src="gameLogic.js"></script>
+    <script language="JavaScript" type="text/javascript" src="dynamicTables.js"></script>
+
+</head>
+
+<body>
+
+    <div style="background-color:lightSteelBlue; width:750px; height:650px; padding-left:50px; padding-top:10px; margin:auto">
+        <h3 align="center">Mastermind</h3>
+    
+        <div class="grid-container">
+            <div style="position:relative">
+                <h4>Choose color</h4>
+
+                <table id="choiceTable" style="background-color:#FFF4E3" cellpadding="2px" cellspacing="2px" width="240px"></table>
+
+                <div style="height:235px; width:240px; display:flex; align-items:center; justify-content:center">
+                    <table><tr><td>
+                        <button id="check" style="margin-top:20px; width:110px">Check</button>
+                    </td></tr><tr><td>
+                        <button id="newGame" style="margin-top:30px; width:110px">New game</button>
+                    </td></tr><tr><td align="center">
+                        <div class="tooltip" style="margin-top:30px; width:22px; height:22px">
+                            <img class="tooltip" src="tooltip_icon.png" />
+                            <span class="tooltiptext">
+                                It is allowed to check the sequence without filling all fields in the highlighted row.<br />
+                                It is possible that the solution has two or more balls of the same color.
+                            </span>
+                        </div>
+                    </td></tr></table>
+                </div>
+
+                <div style="position:absolute; bottom:0">
+                    <h4>Solution</h4>
+                    <table id="solutionTable" style="background-color:#FFF4E3" cellpadding="2px" cellspacing="2px" width="240px"></table>
+                </div>
+
+            </div>
+
+            <div>
+                <h4>Insert color</h4>
+
+                <div style="float:left">
+                    <table id="inputTable" style="background-color:#819DC0" cellpadding="2px" cellspacing="2px" width="240px"></table>
+                </div>
+
+                <div style="float:left; margin-left:15px">
+                    <table id="responseTable" cellpadding="2px" cellspacing="2px" width="160px"></table>
+                </div>
+            </div>
+        </div>
+    </div>	
+
+</body>
+</html>
