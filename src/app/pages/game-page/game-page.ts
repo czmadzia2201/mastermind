@@ -15,9 +15,9 @@ export class GamePage implements OnInit {
   private dialog!: ElementRef<HTMLDialogElement>;
 
   turns = this.generateEmptyTurns();
-  sequence = [0, 0, 0, 0];
   solution = [0, 0, 0, 0];
-  dialogData!: DialogData | null;
+  private sequence = [0, 0, 0, 0];
+  dialogData: DialogData | null = null;
 
   currentTurn = 1;
   selectedNumber = 0;
@@ -102,9 +102,6 @@ export class GamePage implements OnInit {
       }
     }
 
-    // Color matches
-    let hintIndex = hints.filter(hint => hint === 'black').length;
-
     for (const color of remainingGuess) {
       const index = remainingSequence.indexOf(color);
 
@@ -154,8 +151,7 @@ export class GamePage implements OnInit {
 
   private generateSequence(): void {
     for(let i = 0; i < this.sequence.length; i++) {
-        var randomNumber = Math.floor(Math.random() * 8);
-        this.sequence[i] = randomNumber + 1;
+        this.sequence[i] = Math.floor(Math.random() * 8) + 1;
     }
   }
 
