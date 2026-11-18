@@ -18,7 +18,7 @@ export const GAME_LOST_DIALOG: DialogData = {
 };
 
 export const ABOUT_DIALOG: DialogData = {
-    title: 'About the Game',
+    title: 'About the game',
     paragraphs: [
           'Mastermind is a classic code-breaking game. Your goal is to guess a secret sequence of four colored balls within eight attempts. After each guess, black hints indicate correct colors in the correct positions, while white hints indicate correct colors in the wrong positions.',
           'You can check your guess without filling all four positions. The secret sequence may contain two or more balls of the same color.'
