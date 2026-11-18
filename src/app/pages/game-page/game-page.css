@@ -12,7 +12,6 @@
 .game-layout {
   display: flex;
   flex-direction: column;
-  gap: 24px;
   width: max-content;
   min-height: calc(100vh - 36px);
   margin: 0 auto;
