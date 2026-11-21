@@ -8,17 +8,31 @@
   box-sizing: border-box;
 }
 
+.game-page-shell {
+  width: max-content;
+  margin: 0 auto;
+}
+
 .game-layout {
   display: flex;
   flex-direction: column;
   width: max-content;
-  min-height: calc(100vh - 36px);
-  margin: 0 auto;
+  min-height: calc(100vh - 66px);
+  margin: 0;
   padding: 15px 48px;
   background: #fff;
   outline: 1px solid #ddd;
   border-radius: 14px;
   box-sizing: border-box;
+}
+
+
+.game-footer {
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 8px;
+  border-top: 1px solid #ddd;
+  text-align: center;
 }
 
 .game-layout h1 {
@@ -32,14 +46,14 @@
   gap: 4px;
 }
 
-.back-link {
+.page-link {
   color: #666;
   font-size: 14px;
   text-decoration: none;
 }
 
-.back-link:hover,
-.back-link:focus-visible {
+.page-link:hover,
+.page-link:focus-visible {
   text-decoration: underline;
 }
 
@@ -220,7 +234,7 @@ button:hover {
 @media (max-width: 1020px) or (max-height: 600px) {
   :host { padding: 12px; }
   .game-layout {
-    min-height: calc(100vh - 24px);
+    min-height: calc(100vh - 54px);
     padding: 10px 24px 24px;
     gap: 12px;
   }
@@ -246,7 +260,7 @@ button:hover {
 @media (max-width: 660px) or (max-height: 360px) {
   :host { padding: 8px; }
   .game-layout {
-    min-height: calc(100vh - 16px);
+    min-height: calc(100vh - 46px);
     padding: 8px 12px 12px;
     gap: 8px;
   }
