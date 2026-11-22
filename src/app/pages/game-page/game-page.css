@@ -1,4 +1,6 @@
 :host {
+  --border-color: #ddd;
+  --button-border-color: #bbb;
   display: block;
   min-height: 100vh;
   background: #f6f7f9;
@@ -21,7 +23,7 @@
   margin: 0;
   padding: 15px 48px;
   background: #fff;
-  outline: 1px solid #ddd;
+  outline: 1px solid var(--border-color);
   border-radius: 14px;
   box-sizing: border-box;
 }
@@ -31,7 +33,7 @@
   width: 100%;
   margin: 12px auto 0px;
   padding-bottom: 8px;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--border-color);
   text-align: center;
 }
 
@@ -171,7 +173,7 @@
 
 button {
   padding: 8px 12px;
-  border: 1px solid #bbb;
+  border: 1px solid var(--button-border-color);
   border-radius: 8px;
   background: #fff;
   cursor: pointer;
