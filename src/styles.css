@@ -1,5 +1,22 @@
 @import "bootstrap-icons/font/bootstrap-icons.css";
 
+/* Position the shared cookie banner relative to the centered game panel. */
+:root {
+  --cookie-banner-right: max(20px, calc((100vw - 944px) / 2 + 20px));
+}
+
+@media (max-width: 1020px) or (max-height: 600px) {
+  :root {
+    --cookie-banner-right: max(20px, calc((100vw - 646px) / 2 + 20px));
+  }
+}
+
+@media (max-width: 660px) or (max-height: 360px) {
+  :root {
+    --cookie-banner-right: max(20px, calc((100vw - 468px) / 2 + 20px));
+  }
+}
+
 html,
 body {
   margin: 0;
