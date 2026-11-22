@@ -41,7 +41,7 @@
   text-align: center;
 }
 
-.game-footer .cookie-settings-link {
+.game-footer button.page-link {
   margin: 0;
   padding: 0;
   border: none;
@@ -50,7 +50,7 @@
   cursor: pointer;
 }
 
-.game-footer .cookie-settings-link:hover {
+.game-footer button.page-link:hover {
   background: none;
 }
 
