@@ -30,11 +30,28 @@
 
 
 .game-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
   width: 100%;
   margin: 12px auto 0px;
   padding-bottom: 8px;
   border-top: 1px solid var(--border-color);
   text-align: center;
+}
+
+.game-footer .cookie-settings-link {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.game-footer .cookie-settings-link:hover {
+  background: none;
 }
 
 .game-layout h1 {
