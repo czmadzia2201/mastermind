@@ -1,24 +1,40 @@
 :host {
+  --border-color: #ddd;
+  --button-border-color: #bbb;
   display: block;
   min-height: 100vh;
   background: #f6f7f9;
   color: #666;
   font-size: 14px;
-  padding: 18px;
+  padding: 18px 18px 0;
   box-sizing: border-box;
+}
+
+.game-page-shell {
+  width: max-content;
+  margin: 0 auto;
 }
 
 .game-layout {
   display: flex;
   flex-direction: column;
   width: max-content;
-  min-height: calc(100vh - 36px);
-  margin: 0 auto;
+  min-height: calc(100vh - 60px);
+  margin: 0;
   padding: 15px 48px;
   background: #fff;
-  outline: 1px solid #ddd;
+  outline: 1px solid var(--border-color);
   border-radius: 14px;
   box-sizing: border-box;
+}
+
+
+.game-footer {
+  width: 100%;
+  margin: 12px auto 0px;
+  padding-bottom: 8px;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
 }
 
 .game-layout h1 {
@@ -32,14 +48,14 @@
   gap: 4px;
 }
 
-.back-link {
+.page-link {
   color: #666;
   font-size: 14px;
   text-decoration: none;
 }
 
-.back-link:hover,
-.back-link:focus-visible {
+.page-link:hover,
+.page-link:focus-visible {
   text-decoration: underline;
 }
 
@@ -157,7 +173,7 @@
 
 button {
   padding: 8px 12px;
-  border: 1px solid #bbb;
+  border: 1px solid var(--button-border-color);
   border-radius: 8px;
   background: #fff;
   cursor: pointer;
@@ -218,9 +234,9 @@ button:hover {
 
 /* Scale the entire three-column layout according to the limiting viewport dimension. */
 @media (max-width: 1020px) or (max-height: 600px) {
-  :host { padding: 12px; }
+  :host { padding: 12px 12px 0; }
   .game-layout {
-    min-height: calc(100vh - 24px);
+    min-height: calc(100vh - 54px);
     padding: 10px 24px 24px;
     gap: 12px;
   }
@@ -244,9 +260,9 @@ button:hover {
 }
 
 @media (max-width: 660px) or (max-height: 360px) {
-  :host { padding: 8px; }
+  :host { padding: 8px 8px 0; }
   .game-layout {
-    min-height: calc(100vh - 16px);
+    min-height: calc(100vh - 46px);
     padding: 8px 12px 12px;
     gap: 8px;
   }
